@@ -11,11 +11,10 @@ cache = {}
 
 def memoizedadd80(n):
   if n in cache:
-	return n + 80
-  else:
-	print('Long time')
-	cache[n] = n+80
-	return cache[n]
+    return n + 80
+  print('Long time')
+  cache[n] = n+80
+  return cache[n]
 
 print(memoizedadd80(6))
 print(memoizedadd80(6))
@@ -25,12 +24,12 @@ def memoizedadd80():
   cache = {}
 
   def memoized(n):
-	  if n in cache:
-		return n + 80
-	  else:
-		print('Long time')
-		cache[n] = n+80
-		return cache[n]
+    if n in cache:
+      return n + 80
+    print('Long time')
+    cache[n] = n+80
+    return cache[n]
+
   return memoized
 
 memo = memoizedadd80()

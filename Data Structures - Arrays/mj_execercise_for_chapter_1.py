@@ -63,9 +63,7 @@ a = 3
 
 
 def reverse(str_i):
-    myList = []
-    for i in range(len(str)-1,-1,-1):
-        myList.append(str[i])
+    myList = [str[i] for i in range(len(str)-1,-1,-1)]
     return ''.join(myList)
 
 """
@@ -92,7 +90,7 @@ def mergesortarr(a,b):
         if a[i] <= b[j]:
             myList.append(a[i])
             i+=1
-        elif b[j] < a[i]:
+        else:
             myList.append(b[j])
             j +=1
     print(myList)

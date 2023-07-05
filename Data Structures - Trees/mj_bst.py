@@ -12,20 +12,20 @@ class BinarySearchTree:
 
     def insert(self, data):
         new_node = Node(data)
-        if self.root == None:
+        if self.root is None:
             self.root = new_node
             return
         else:
             current_node = self.root
             while True:
                 if data < current_node.data:
-                    if current_node.left == None:
+                    if current_node.left is None:
                         current_node.left = new_node
                         return
                     else:
                         current_node = current_node.left
                 elif data > current_node.data:
-                    if current_node.right == None:
+                    if current_node.right is None:
                         current_node.right = new_node
                         return
                     else:
@@ -35,7 +35,7 @@ class BinarySearchTree:
     def lookup(self, data):
         current_node = self.root
         while True:
-            if current_node == None:
+            if current_node is None:
                 return False
             if current_node.data == data:
                 return True
@@ -51,7 +51,7 @@ class BinarySearchTree:
     def printt(self, cur_node):
         if cur_node != None:
             self.printt(cur_node.left)
-            print(str(cur_node.data))
+            print(cur_node.data)
             self.printt(cur_node.right)
 
 

@@ -76,11 +76,10 @@ class CircularLinkedList:
         while i < self._size-1:
             temp = temp._next
             i += 1
-        value = temp._next._data
         self._tail = temp
         self._tail._next = self._head
         self._size -= 1
-        return value
+        return temp._next._data
 
 
     def remove_particular(self, position):
