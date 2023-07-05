@@ -49,10 +49,14 @@ class HashTable:
     def get(self, key):
         hash_value = self.hash(key)
         reference = self.hashmap[hash_value]
-        for i in range(len(reference)):
-            if reference[i][0] == key:
-                return reference[i][1]
-        return -1
+        return next(
+            (
+                reference[i][1]
+                for i in range(len(reference))
+                if reference[i][0] == key
+            ),
+            -1,
+        )
 
     def remove(self, key):
         hash_value = self.hash(key)
